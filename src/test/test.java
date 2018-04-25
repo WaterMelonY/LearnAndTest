@@ -57,7 +57,7 @@ public class test {
                 "BrowseFileTempLocation:'test'," +
                 "ThumImage:'test'," +
                 "RawDataType:'1'," +
-                "ResultPath:'/DiskArray/iecas/root/dpps/meta/2017/1219/projectTest_20180321_0000000001.result.xml'}";
+                "ResultPath:'/DiskArray/iecas/root/dpps/meta/2018/0425/projectTest_20180321_0000000001.result.xml'}";
 //        System.out.println(json);
 //        JSONObject.fromObject(json);
         new WebServiceImpl().testCA(json);

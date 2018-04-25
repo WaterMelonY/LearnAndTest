@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?><process-order id="THSegmentProcess20180424040553" name="THSegmentProcess" priority="1">
+    <task>
+        <l0Data>/mnt/lfs/l0datatemp/JB13A-1/2015/0729/368_1507290001/368_1507290001.100001</l0Data>
+        <segmentDirRoot>/DiskArray/data/catalog/JB13A-1/2015/0729/</segmentDirRoot>
+        <segments>
+            <segment>
+                <status>success</status>
+                <remark/>
+                <hasFred>yes/no</hasFred>
+                <fredData>JB13A-1_SAR_000034683_009.FRED</fredData>
+                <hasIncalib>yes/no</hasIncalib>
+                <incalibdata>JB13A-1_SAR_000034683_009.incalib</incalibdata>
+                <metaFile>JB13A-1_SAR_000034683_009.meta.xml</metaFile>
+                <status>failed</status>
+                <remark>sss</remark>
+                <status>success</status>
+                <remark/>
+                <hasFred>yes/no</hasFred>
+                <fredData>JB13A-1_SAR_000034683_010.FRED</fredData>
+                <hasIncalib>yes/no</hasIncalib>
+                <incalibdata>JB13A-1_SAR_000034683_010.incalib</incalibdata>
+                <metaFile>JB13A-1_SAR_000034683_009.meta.xml</metaFile>
+            </segment>
+            <segment/>
+            <segment/>
+        </segments>
+    </task>
+</process-order>

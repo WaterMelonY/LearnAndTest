@@ -32,6 +32,7 @@ public class CAXmlTest {
         Document doc = DocumentHelper.createDocument();
         JSONObject jsonObject = JSONObject.fromObject(xml);
 
+        System.out.println(PROCESS+time);
         Element root = doc.addElement("process-order").addAttribute("id", PROCESS+time).addAttribute("name", PROCESS)
                 .addAttribute("priority", "1");
 
