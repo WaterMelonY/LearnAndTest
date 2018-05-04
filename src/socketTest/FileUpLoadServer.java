@@ -20,7 +20,7 @@ public class FileUpLoadServer extends ServerSocket {
         try {
             FileUpLoadServer server = new FileUpLoadServer(8888);
             server.load();
-            server.quit();
+//            server.quit();
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -68,12 +68,6 @@ public class FileUpLoadServer extends ServerSocket {
             new Thread(new Task(socket, ip)).start();
         }
     }
-
-    public void SingleLoad(){
-
-    }
-
-
 
     /**
      * 处理客户端传输过来的文件线程类
@@ -196,6 +190,7 @@ public class FileUpLoadServer extends ServerSocket {
                  */
                 //DoSomeThing dst = new DoSomeThing()
                 //dst.save(filePath);
+                quit();
             }
         }
     }

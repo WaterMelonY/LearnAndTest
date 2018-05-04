@@ -38,7 +38,7 @@ public class CAXmlTest {
 
         Element task = root.addElement("task");
         String orderid = PROCESS+"_"+time;
-        String taskId = TASK+"_"+"123456";
+        String taskId = TASK+"_"+time;
         task.addAttribute("orderid",orderid);
         task.addAttribute("priority","2");
         task.addAttribute("id",taskId);
@@ -73,11 +73,12 @@ public class CAXmlTest {
         content.addElement("BrowseFileTempLocation").setText(jsonObject.getString("BrowseFileTempLocation"));
         content.addElement("ThumImage").setText(jsonObject.getString("ThumImage"));
         content.addElement("RawDataType").setText(jsonObject.getString("RawDataType"));
-        content.addElement("ResultPath").setText(jsonObject.getString("ResultPath"));
-
+        String aa = "/DiskArray/iecas/root/dpps/meta/2018/0503/"+taskId+".result.xml";
+        content.addElement("ResultPath").setText(aa);
+        System.out.println(doc.asXML());
         outputXml(doc, "D:/CH/testXml/Process/"+ orderid + ".xml");
 
-
+//        RedisUtil.submit(doc.asXML());
         //像redis中添加列表并将xml文件存放到列表中
         String redisIP = "172.24.10.161";
         int redisPort = 8715;

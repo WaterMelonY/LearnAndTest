@@ -1,6 +1,5 @@
 package socketTest;
 
-import java.io.IOException;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -19,10 +18,11 @@ public class SocketTest {
 //        new Thread(new Runnable() {
 //            @Override
 //            public void run() {
-//                file("D:\\工作相关\\接收资料\\VMwareworkstation_full_12.1.0.2487.1453173744[1].exe");
+                file("D:\\工作相关\\接收资料\\VMwareworkstation_full_12.1.0.2487.1453173744[1].exe");
 //            }
 //        }).start();
-        file("D:\\工作相关\\接收资料\\VMwareworkstation_full_12.1.0.2487.1453173744[1].exe");
+//        file("Z:\\iecas\\028880\\SAY-ZY3-NAD-20170322-028880-0000050101.DAT");
+//            file("C:\\Users\\WaterMelon\\Desktop\\记录.txt");
     }
 
     public static void file(String filePath){
@@ -31,7 +31,11 @@ public class SocketTest {
             client = new FileUpLoadClient("172.24.10.210",8888);
 //            client.statusInfo();
             client.sendFile(filePath);
-        } catch (IOException e) {
+//            System.out.println(a);
+//            if(a==1){
+//                client.quit();
+//            }
+        } catch (Exception e) {
             e.printStackTrace();
         }
     }
