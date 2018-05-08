@@ -73,7 +73,7 @@ public class CAXmlTest {
         content.addElement("BrowseFileTempLocation").setText(jsonObject.getString("BrowseFileTempLocation"));
         content.addElement("ThumImage").setText(jsonObject.getString("ThumImage"));
         content.addElement("RawDataType").setText(jsonObject.getString("RawDataType"));
-        String aa = "/DiskArray/iecas/root/dpps/meta/2018/0503/"+taskId+".result.xml";
+        String aa = "/DiskArray/iecas/root/dpps/meta/2018/0504/"+taskId+".result.xml";
         content.addElement("ResultPath").setText(aa);
         System.out.println(doc.asXML());
         outputXml(doc, "D:/CH/testXml/Process/"+ orderid + ".xml");

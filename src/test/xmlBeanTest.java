@@ -4,6 +4,7 @@ import javax.xml.bind.JAXBContext;
 import javax.xml.bind.JAXBException;
 import javax.xml.bind.Marshaller;
 import javax.xml.bind.Unmarshaller;
+import java.io.ByteArrayInputStream;
 import java.io.File;
 import java.io.StringWriter;
 import java.sql.Connection;
@@ -21,15 +22,15 @@ public class xmlBeanTest<T> {
         this.var = var;
     }
 
-    public Object getObjByOrderName() {
-//        String xmlStr =getXMLByOrderName(orderName);
-//        ByteArrayInputStream stream = new ByteArrayInputStream(xmlStr.getBytes());
+    public Object getObjByOrderName(String orderName) {
+        String xmlStr =getXMLByOrderName(orderName);
+        ByteArrayInputStream stream = new ByteArrayInputStream(xmlStr.getBytes());
         JAXBContext jaxbContext = null;
         Object a = null;
         try {
             jaxbContext = JAXBContext.newInstance(var.getClass());
             Unmarshaller jaxbUnmarshaller = jaxbContext.createUnmarshaller();
-            a = jaxbUnmarshaller.unmarshal(new File("C:\\Users\\WaterMelon\\Desktop\\temp.xml"));
+            a = jaxbUnmarshaller.unmarshal(stream);
         } catch (JAXBException e) {
             e.printStackTrace();
         }
@@ -61,6 +62,19 @@ public class xmlBeanTest<T> {
         }
 
         return xmlStr;
+    }
+
+    public T getObjByOrderName(File file){
+        JAXBContext jaxbContext = null;
+        Object a= null;
+        try {
+            jaxbContext = JAXBContext.newInstance(var.getClass());
+            Unmarshaller jaxbUnmarshaller = jaxbContext.createUnmarshaller();
+            a = jaxbUnmarshaller.unmarshal(file);
+        } catch (JAXBException e) {
+            e.printStackTrace();
+        }
+        return (T)a;
     }
 
     /**
@@ -97,7 +111,7 @@ public class xmlBeanTest<T> {
     }
 
     public static void main(String[] args) {
-        ProcessOrder a = (ProcessOrder) new xmlBeanTest<ProcessOrder>(new ProcessOrder()).getObjByOrderName();
+        ProcessOrder a = (ProcessOrder) new xmlBeanTest<ProcessOrder>(new ProcessOrder()).getObjByOrderName(new File("D:\\workSapce\\testProbject\\src\\service\\a.xml"));
         System.out.println(a.toString());
         System.out.println(convertToXml(a));
     }
